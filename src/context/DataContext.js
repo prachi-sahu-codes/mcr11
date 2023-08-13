@@ -90,7 +90,7 @@ export const DataProvider = ({ children }) => {
             ? { ...item, watchlist: true }
             : item
         );
-        localStorage.setItem("data", JSON.stringify(watchMovie));
+        localStorage.setItem("searchData", JSON.stringify(watchMovie));
 
         return { ...state, searchedData: watchMovie };
 
@@ -100,7 +100,7 @@ export const DataProvider = ({ children }) => {
             ? { ...item, watchlist: !item.watchlist }
             : item
         );
-        localStorage.setItem("data", JSON.stringify(unWatchMovie));
+        localStorage.setItem("searchData", JSON.stringify(unWatchMovie));
         return { ...state, searchedData: unWatchMovie };
 
       default:
