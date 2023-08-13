@@ -52,7 +52,7 @@ function App() {
         <Route path="/" element={<Listing />} />
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/starred" element={<Starred />} />
-        <Route path="/movieDetail" element={<MovieDetail />} />
+        <Route path="/movieDetail/:id" element={<MovieDetail />} />
         <Route path="/newMovie" element={<AddMovie />} />
       </Routes>
     </div>

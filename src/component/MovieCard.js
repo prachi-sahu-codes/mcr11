@@ -1,11 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useData } from "../context/DataContext";
 
 export const MovieCard = ({ item }) => {
   const { dispatch } = useData();
+  const navigate = useNavigate();
 
   return (
-    <div className="w-64 shadow-md rounded-md hover:bg-slate-50 cursor-pointer">
+    <div
+      className="w-64 shadow-md rounded-md hover:bg-slate-50 cursor-pointer"
+      onClick={() => navigate(`/movieDetail/${item?.id}`)}
+    >
       <img
         src={item?.imageURL}
         className="w-64 h-64 object-cover rounded-tr-md rounded-tl-md"
