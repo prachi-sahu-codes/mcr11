@@ -26,14 +26,20 @@ export const MovieCard = ({ item }) => {
         {item?.star === true ? (
           <button
             className="pb-1 pt-2 px-5 bg-primary font-bold rounded-md text-white shadow-md hover:opacity-90"
-            onClick={() => dispatch({ type: "UNSTAR", payload: item?.id })}
+            onClick={(e) => {
+              e.stopPropagation();
+              dispatch({ type: "UNSTAR", payload: item?.id });
+            }}
           >
             Starred
           </button>
         ) : (
           <button
             className="pb-1 pt-2 px-5 bg-primary font-bold rounded-md text-white shadow-md hover:opacity-90"
-            onClick={() => dispatch({ type: "STAR", payload: item?.id })}
+            onClick={(e) => {
+              e.stopPropagation();
+              dispatch({ type: "STAR", payload: item?.id });
+            }}
           >
             Star
           </button>
@@ -41,16 +47,20 @@ export const MovieCard = ({ item }) => {
         {item?.watchlist === true ? (
           <button
             className=" pb-1 pt-2 px-5 bg-primary font-bold rounded-md text-white shadow-md hover:opacity-90"
-            onClick={() =>
-              dispatch({ type: "REMOVE_WATCHLIST", payload: item?.id })
-            }
+            onClick={(e) => {
+              e.stopPropagation();
+              dispatch({ type: "REMOVE_WATCHLIST", payload: item?.id });
+            }}
           >
             Watchlisted
           </button>
         ) : (
           <button
             className=" pb-1 pt-2 px-5 bg-primary font-bold rounded-md text-white shadow-md hover:opacity-90"
-            onClick={() => dispatch({ type: "WATCHLIST", payload: item?.id })}
+            onClick={(e) => {
+              e.stopPropagation();
+              dispatch({ type: "WATCHLIST", payload: item?.id });
+            }}
           >
             Watchlist
           </button>

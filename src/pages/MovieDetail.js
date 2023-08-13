@@ -5,7 +5,9 @@ import { useData } from "../context/DataContext";
 export const MovieDetail = () => {
   const { id } = useParams();
   const { state, dispatch } = useData();
-  const findProduct = state?.data?.find((item) => item.id.toString() === id);
+  const findProduct = state?.searchedData?.find(
+    (item) => item.id.toString() === id
+  );
 
   return (
     <div className="px-10 pb-6 pt-16 w-full">
