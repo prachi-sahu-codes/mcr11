@@ -14,7 +14,7 @@ export const MovieCard = ({ item }) => {
       <h1 className="text-lg text-center p-2 py-2 pt-4 font-bold">
         {item?.title}
       </h1>
-      <p className="px-2 pb-3 text-center text-sm h-20 overflow-hidden">
+      <p className="px-2 pb-3 text-center text-sm h-20 overflow-hidden mb-2">
         {item?.summary}
       </p>
       <div className="px-2 pb-2 flex justify-between items-center">
