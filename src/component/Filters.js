@@ -64,12 +64,12 @@ export const Filters = () => {
         Clear Filters
       </button>
 
-      <button
+      {/* <button
         className=" pb-1 pt-2 px-5 bg-primary font-bold rounded-md text-white shadow-md hover:opacity-90"
         onClick={() => navigate("/newMovie")}
       >
         Add a Movie
-      </button>
+      </button> */}
     </div>
   );
 };
