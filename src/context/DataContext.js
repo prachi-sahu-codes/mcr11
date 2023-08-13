@@ -71,6 +71,12 @@ export const DataProvider = ({ children }) => {
             ? { ...item, star: true }
             : item
         );
+        const wholestarMovie = state.data.map((item) =>
+          item.id.toString() === action.payload.toString()
+            ? { ...item, star: true }
+            : item
+        );
+        localStorage.setItem("data", JSON.stringify(wholestarMovie));
         localStorage.setItem("searchData", JSON.stringify(starMovie));
 
         return { ...state, searchedData: starMovie };
@@ -81,6 +87,13 @@ export const DataProvider = ({ children }) => {
             ? { ...item, star: !item.star }
             : item
         );
+        const wholeunstarMovie = state.searchedData.map((item) =>
+          item.id.toString() === action.payload.toString()
+            ? { ...item, star: !item.star }
+            : item
+        );
+        localStorage.setItem("data", JSON.stringify(wholeunstarMovie));
+
         localStorage.setItem("searchData", JSON.stringify(unstarMovie));
         return { ...state, searchedData: unstarMovie };
 
@@ -90,6 +103,12 @@ export const DataProvider = ({ children }) => {
             ? { ...item, watchlist: true }
             : item
         );
+        const wholewatchMovie = state.searchedData.map((item) =>
+          item.id.toString() === action.payload.toString()
+            ? { ...item, watchlist: true }
+            : item
+        );
+        localStorage.setItem("data", JSON.stringify(wholewatchMovie));
         localStorage.setItem("searchData", JSON.stringify(watchMovie));
 
         return { ...state, searchedData: watchMovie };
@@ -100,6 +119,12 @@ export const DataProvider = ({ children }) => {
             ? { ...item, watchlist: !item.watchlist }
             : item
         );
+        const wholeunWatchMovie = state.searchedData.map((item) =>
+          item.id.toString() === action.payload.toString()
+            ? { ...item, watchlist: !item.watchlist }
+            : item
+        );
+        localStorage.setItem("data", JSON.stringify(wholeunWatchMovie));
         localStorage.setItem("searchData", JSON.stringify(unWatchMovie));
         return { ...state, searchedData: unWatchMovie };
 
